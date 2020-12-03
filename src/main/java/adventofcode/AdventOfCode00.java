@@ -11,11 +11,11 @@ public class AdventOfCode00 {
 
     public Integer processFirstPart() {
 
-        return 1;
+        return input.size();
     }
 
     public Integer processSecondPart() {
 
-        return 1;
+        return input.size();
     }
 }
