@@ -58,7 +58,7 @@ public class AdventOfCode04 {
     }
 
     boolean hasRequestedFields(String s) {
-        return s.matches(".*(?=(.*byr:))(?=(.*iyr))(?=(.*eyr:))(?=(.*hgt))(?=(.*hcl:))(?=(.*ecl))(?=(.*pid:)).*");
+        return s.matches(".*(?=(.*byr:))(?=(.*iyr))(?=(.*eyr:))(?=(.*hgt))(?=(.*hcl:))(?=(.*ecl:))(?=(.*pid:)).*");
     }
 
     boolean hasValidBirthYear(String s) {
