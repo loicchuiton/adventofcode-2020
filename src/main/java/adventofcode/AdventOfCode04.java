@@ -46,16 +46,14 @@ public class AdventOfCode04 {
             if (string.isEmpty()) {
                 listOfPassport.add(sb.toString());
                 sb = new StringBuilder();
-
             } else {
-                sb.append(string);
-
+                sb.append(string).append(" ");
             }
 
-            sb.append(" ");
-
         }
+
         listOfPassport.add(sb.toString());
+
         return listOfPassport;
     }
 
