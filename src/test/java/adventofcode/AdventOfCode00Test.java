@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AdventOfCode00Test {
+class AdventOfCode00Test {
 
     private static final String PROBLEM_NUMBER = "00";
 
