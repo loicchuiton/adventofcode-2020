@@ -102,25 +102,6 @@ class AdventOfCode05Test {
     }
 
 
-    @ParameterizedTest
-    @MethodSource("provideUseCasesForAdventOfCode05Part2")
-    void part2_unitTests(String input, int expected) {
-        code05 = new AdventOfCode05(singletonList(input));
-
-        Integer result = code05.processFirstPart();
-
-        assertEquals(expected, result);
-    }
-
-    private static Stream<Arguments> provideUseCasesForAdventOfCode05Part2() {
-        return Stream.of(
-                Arguments.of("BFFFBBFRRR", 567),
-                Arguments.of("FFFBBBFRRR", 119),
-                Arguments.of("BBFFBBFRLL", 820)
-
-        );
-    }
-
     @Test
     void part2_final() {
         code05 = new AdventOfCode05(input);
