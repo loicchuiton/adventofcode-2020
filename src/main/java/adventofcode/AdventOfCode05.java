@@ -19,20 +19,6 @@ public class AdventOfCode05 {
         return listOfSeats.get(listOfSeats.size() - 1);
     }
 
-    private List<Integer> getListOfSeats() {
-        List<Integer> listOfSeats = new ArrayList<>();
-        for (String s : input) {
-
-            int column = getColumn(s);
-            int row = getRow(s);
-            int seatId = row * 8 + column;
-
-
-            listOfSeats.add(seatId);
-        }
-        return listOfSeats;
-    }
-
     public Integer processSecondPart() {
         List<Integer> listOfSeats = getListOfSeats();
 
@@ -45,6 +31,21 @@ public class AdventOfCode05 {
 
         }
         return 0;
+    }
+
+    
+    private List<Integer> getListOfSeats() {
+        List<Integer> listOfSeats = new ArrayList<>();
+        for (String s : input) {
+
+            int column = getColumn(s);
+            int row = getRow(s);
+            int seatId = row * 8 + column;
+
+
+            listOfSeats.add(seatId);
+        }
+        return listOfSeats;
     }
 
     Integer getRow(String s) {
@@ -64,7 +65,7 @@ public class AdventOfCode05 {
         return minRow;
     }
 
-    public Integer getColumn(String s) {
+    Integer getColumn(String s) {
         int minColumn = 0;
         int maxColumn = 7;
 
