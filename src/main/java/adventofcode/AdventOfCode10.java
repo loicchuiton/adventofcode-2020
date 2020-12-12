@@ -49,7 +49,7 @@ public class AdventOfCode10 {
         pathMap.put(0, 1L);
 
         for (int indexOfCurrentAdapter = 0; indexOfCurrentAdapter < sortedAdaptersList.size(); indexOfCurrentAdapter++) {
-            Integer indexOfNextAdapter = indexOfCurrentAdapter + 1;
+            int indexOfNextAdapter = indexOfCurrentAdapter + 1;
 
             while (indexOfNextAdapter < sortedAdaptersList.size()
                     && isCompatibleAdapter(sortedAdaptersList.get(indexOfCurrentAdapter), sortedAdaptersList.get(indexOfNextAdapter))) {

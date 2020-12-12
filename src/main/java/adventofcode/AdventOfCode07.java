@@ -95,19 +95,21 @@ public class AdventOfCode07 {
             int result = 1;
             String[] containedBags = e.split(", ");
 
-            for (int i = 0; i < containedBags.length; ++i) {
-                String keyToSearch = "";
-                final String[] s1 = containedBags[i].split(" ");
+            for (String containedBag : containedBags) {
+                StringBuilder sb = new StringBuilder();
+                final String[] s1 = containedBag.split(" ");
                 List<String> temp = Arrays.stream(s1)
                         .filter(a -> !a.matches(".*[0-9].*") && !a.matches(".*bag.*"))
                         .collect(Collectors.toList());
 
-                int nbtest = Integer.parseInt(s1[0]);
-                for (String s : temp) {
-                    keyToSearch += s + " ";
+                int nbTest = Integer.parseInt(s1[0]);
+                for (int i = 0; i < temp.size(); i++) {
+                    if (i > 0) {
+                        sb.append(" ");
+                    }
+                    sb.append(temp.get(i));
                 }
-                keyToSearch = keyToSearch.trim();
-                result += nbtest * nbOfBags(map.get(keyToSearch), map);
+                result += nbTest * nbOfBags(map.get(sb.toString()), map);
 
             }
             return result;

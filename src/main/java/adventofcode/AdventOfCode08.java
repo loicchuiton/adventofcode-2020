@@ -1,15 +1,14 @@
 package adventofcode;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class AdventOfCode08 {
 
+    public static final String REGEX_NOP = "^nop.*";
+    public static final String REGEX_ACC = "^acc.*";
+    public static final String REGEX_JMP = "^jmp.*";
     private final List<String> input;
-
-    private final Set<String> set = new HashSet<>();
 
     public AdventOfCode08(List<String> input) {
         this.input = input;
@@ -28,13 +27,13 @@ public class AdventOfCode08 {
             String currentOperation = input.get(currentIndex);
 
 
-            if (currentOperation.matches("^nop.*")) {
+            if (currentOperation.matches(REGEX_NOP)) {
                 ++currentIndex;
-            } else if (currentOperation.matches("^acc.*")) {
+            } else if (currentOperation.matches(REGEX_ACC)) {
                 ++currentIndex;
                 result += Integer.parseInt(currentOperation.split(" ")[1]);
 
-            } else if (currentOperation.matches("^jmp.*")) {
+            } else if (currentOperation.matches(REGEX_JMP)) {
 
                 currentIndex += Integer.parseInt(currentOperation.split(" ")[1]);
             }
@@ -56,9 +55,9 @@ public class AdventOfCode08 {
             List<String> tempInput = new ArrayList<>(input);
 
             String newS = tempInput.get(i);
-            if (newS.matches("^nop.*")) {
+            if (newS.matches(REGEX_NOP)) {
                 newS = newS.replace("nop", "jmp");
-            } else if (newS.matches("^jmp.*")) {
+            } else if (newS.matches(REGEX_JMP)) {
                 newS = newS.replace("jmp", "nop");
             }
             tempInput.set(i, newS);
@@ -71,13 +70,13 @@ public class AdventOfCode08 {
                 String currentOperation = tempInput.get(currentIndex);
 
 
-                if (currentOperation.matches("^nop.*")) {
+                if (currentOperation.matches(REGEX_NOP)) {
                     ++currentIndex;
-                } else if (currentOperation.matches("^acc.*")) {
+                } else if (currentOperation.matches(REGEX_ACC)) {
                     ++currentIndex;
                     result += Integer.parseInt(currentOperation.split(" ")[1]);
 
-                } else if (currentOperation.matches("^jmp.*")) {
+                } else if (currentOperation.matches(REGEX_JMP)) {
 
                     currentIndex += Integer.parseInt(currentOperation.split(" ")[1]);
                 }
